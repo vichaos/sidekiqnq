@@ -8,8 +8,6 @@ import (
 	"gopkg.in/redis.v5"
 )
 
-
-
 func (s *Sidekiq) connect() {
 	s.RedisClient = redis.NewClient(&redis.Options{
 		Addr:     s.redisHost + ":" + s.redisPort,
