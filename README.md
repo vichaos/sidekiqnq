@@ -9,10 +9,10 @@ go get github.com/dgm59/sidekiqnq
 
 ##### How to use:
 ```go
-# Create a redis connection:
+// Create a redis connection:
 s := sidekiqnq.NewSidekiqConnection(redisNamespace, redisPort, redisHost, redisPassword, redisDB)
 
-# Enqueue a job to redis:
+// Enqueue a job to redis:
 s.EnqueueJob("sidekiq:queue:default", "RecordWorker", []interface{}{13})
 ```
 
