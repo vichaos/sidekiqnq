@@ -1,0 +1,4 @@
+package: github.com/dgm59/sidekiqnq
+import:
+- package: gopkg.in/redis.v5
+  version: ^5.0.2

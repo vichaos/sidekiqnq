@@ -1,0 +1,6 @@
+hash: d4ee983bfd67d370e8b14acc6ffdb7c23ae28ab6bf266f1d9aff9534db4e1d2f
+updated: 2016-11-18T14:11:32.363247335+07:00
+imports:
+- name: gopkg.in/redis.v5
+  version: b6bfe529a846fbb9a58c832ce71c61b6fde12c15
+testImports: []
