@@ -2,7 +2,6 @@ package sidekiqnq
 
 import (
 	"encoding/json"
-	"log"
 	"time"
 
 	"gopkg.in/redis.v5"
@@ -24,14 +23,19 @@ func NewSidekiqConnection(namespace string, redisPort string, redisHost string, 
 }
 
 // EnqueueJob sends
-func (s *Sidekiq) EnqueueJob(queueName string, klass string, args []interface{}) {
+func (s *Sidekiq) EnqueueJob(queueName string, klass string, args []interface{}) (int64, error) {
 	jid, err := generateRandomString(12)
 	if err != nil {
-		log.Print(err)
+		return 0, err
 	}
 	job := Job{klass, args, jid, true, time.Now().Unix()}
 	j, err := json.Marshal(job)
-
-	// log.Print(err)
-	s.RedisClient.LPush(queueName, string(j))
+	if err != nil {
+		return 0, err
+	}
+	size, err := s.RedisClient.LPush(queueName, string(j)).Result()
+	if err != nil {
+		return 0, err
+	}
+	return size, err
 }
