@@ -26,7 +26,9 @@ func NewSidekiqConnection(namespace string, redisPort string, redisHost string, 
 // EnqueueJob sends
 func (s *Sidekiq) EnqueueJob(queueName string, klass string, args []interface{}) {
 	jid, err := generateRandomString(12)
-	log.Print(err)
+	if err != nil {
+		log.Print(err)
+	}
 	job := Job{klass, args, jid, true, time.Now().Unix()}
 	j, err := json.Marshal(job)
 
