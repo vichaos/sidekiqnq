@@ -1,6 +1,6 @@
 package sidekiqnq
 
-import redis "gopkg.in/redis.v5"
+import redis "gopkg.in/redis.v6"
 
 // Sidekiq defines the struture of a sidekiq object
 type Sidekiq struct {

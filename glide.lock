@@ -1,6 +1,14 @@
-hash: d4ee983bfd67d370e8b14acc6ffdb7c23ae28ab6bf266f1d9aff9534db4e1d2f
-updated: 2016-11-18T14:11:32.363247335+07:00
+hash: cc2cc41a6751c47ba4be9b16b746b0868b00c06c2f9decf415ce2415991a7b12
+updated: 2017-11-09T12:28:34.049351+07:00
 imports:
-- name: gopkg.in/redis.v5
-  version: b6bfe529a846fbb9a58c832ce71c61b6fde12c15
+- name: github.com/go-redis/redis
+  version: d0f86971b5d61de9cebd2616b932acb7ba14d957
+  subpackages:
+  - internal
+  - internal/consistenthash
+  - internal/hashtag
+  - internal/pool
+  - internal/proto
+- name: gopkg.in/redis.v6
+  version: d0f86971b5d61de9cebd2616b932acb7ba14d957
 testImports: []

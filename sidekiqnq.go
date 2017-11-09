@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"gopkg.in/redis.v5"
+	"gopkg.in/redis.v6"
 )
 
 func (s *Sidekiq) connect() {
